@@ -1,0 +1,41 @@
+dataset: 'vqa_msvd'
+
+video_root: 'shared_datasets/msvd_qa/videos'
+train_ann_jsonl: 'shared_datasets/msvd_qa/ann/train.jsonl'
+val_ann_jsonl: 'shared_datasets/msvd_qa/ann/val.jsonl'
+test_ann_jsonl: 'shared_datasets/msvd_qa/ann/test.jsonl'
+test_answer_list: 'shared_datasets/msvd_qa/ann/test_answer_list.json'
+num_frm_train: 4
+num_frm_test: 8
+frm_sampling_strategy: 'headtail'
+height: null
+width: null
+start_time: null
+end_time: null
+fps: -1
+# video_representation: single_frame
+video_representation: concat_frame
+
+# set pretrained as a file path or an url
+# pretrained: 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model*_vqa.pth'
+pretrained: 'ckpt/finetuned/model_base_vqa_capfilt_large.pth'
+
+# size of vit model; base or large
+vit: 'base'
+batch_size_train: 8 # 16
+batch_size_test: 8 # 32
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+init_lr: 1e-5 #2e-5
+
+# train_image_size: 224
+# eval_image_size: 480
+image_size: 224
+
+k_test: 64 # 128
+inference: 'rank'
+
+# optimizer
+weight_decay: 0.05
+min_lr: 0
+max_epoch: 1

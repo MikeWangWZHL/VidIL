@@ -1,0 +1,51 @@
+dataset: 'vatex'
+train_video_root: ['shared_datasets/Vatex/video_clips/train_test']
+train_ann_jsonl: ['shared_datasets/Vatex/value_ann/vatex_en_c/videoid_2_text_vatex_en_c_train.jsonl']
+eval_video_root: 'shared_datasets/Vatex/video_clips/train_test'
+val_ann_jsonl: 'shared_datasets/Vatex/value_ann/vatex_en_c/videoid_2_text_vatex_en_c_val.jsonl'
+test_ann_jsonl: 'shared_datasets/Vatex/value_ann/vatex_en_c/videoid_2_text_vatex_en_c_test.jsonl'
+num_frm_train: 4
+num_frm_test: 8
+frm_sampling_strategy: 'headtail'
+height: null
+width: null
+start_time: null
+end_time: null
+fps: -1
+# video_representation: single_frame
+video_representation: concat_frame
+
+# set pretrained as a file path or an url
+pretrained: 'ckpt/pretrained/model_base_capfilt_large.pth'
+# pretrained: 'ckpt/finetuned/model_base_retrieval_coco.pth'
+caption_model_ckpt: 'ckpt/finetuned/model_base_caption_capfilt_large.pth'
+filterer_model_ckpt: 'ckpt/finetuned/model_base_retrieval_coco.pth'
+
+# size of vit model; base or large
+
+vit: 'base'
+batch_size_train: 8
+batch_size_test: 8
+vit_grad_ckpt: True
+vit_ckpt_layer: 4
+init_lr: 1e-6 # scale down from 1e-5
+
+# vit: 'large'
+# batch_size_train: 16
+# batch_size_test: 32
+# vit_grad_ckpt: True
+# vit_ckpt_layer: 12
+# init_lr: 5e-6
+
+# image_size: 384
+image_size: 224
+queue_size: 57600
+alpha: 0.4
+k_test: 64
+negative_all_rank: True
+
+# optimizer
+weight_decay: 0.05
+min_lr: 0
+max_epoch: 1 # 6
+

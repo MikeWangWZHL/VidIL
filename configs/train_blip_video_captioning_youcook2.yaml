@@ -1,0 +1,52 @@
+
+### youcook2 ###
+dataset: 'caption_youcook2'
+video_root: 'shared_datasets/Youcook2/video_clips/train_val'
+train_ann_jsonl: 'shared_datasets/Youcook2/value_ann/videoid_2_text_yc2c_train.jsonl'
+val_ann_jsonl: 'shared_datasets/Youcook2/value_ann/videoid_2_text_yc2c_val.jsonl'
+skip_val: True
+test_ann_jsonl: 'shared_datasets/Youcook2/value_ann/videoid_2_text_yc2c_val.jsonl'
+
+
+num_frm_train: 4
+num_frm_test: 8
+frm_sampling_strategy: 'headtail'
+height: null
+width: null
+start_time: null
+end_time: null
+fps: -1
+video_representation: concat_frame
+# video_representation: single_frame
+
+# set pretrained as a file path or an url
+pretrained: 'ckpt/finetuned/model_base_caption_capfilt_large.pth'
+caption_model_ckpt: 'ckpt/finetuned/model_base_caption_capfilt_large.pth'
+filterer_model_ckpt: 'ckpt/finetuned/model_base_retrieval_coco.pth'
+# size of vit model; base or large
+vit: 'base'
+vit_grad_ckpt: False
+vit_ckpt_layer: 0
+train_batch_size: 12
+test_batch_size: 16
+init_lr: 5e-6
+
+# vit: 'large'
+# vit_grad_ckpt: True
+# vit_ckpt_layer: 5
+# batch_size: 16
+# init_lr: 2e-6
+
+image_size: 224
+
+# generation configs
+max_length: 30  
+min_length: 5
+num_beams: 3
+prompt: 'a video of '
+
+# optimizer
+weight_decay: 0.05
+min_lr: 0
+max_epoch: 1
+

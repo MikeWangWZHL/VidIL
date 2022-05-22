@@ -1,0 +1,47 @@
+### dataset config ###
+video_roots: 'shared_datasets/MSRVTT_ret/videos'
+train_ann_jsons: 'shared_datasets/MSRVTT_caption/ann/video_2_text_original_val_caption.json'
+video_formats: 'mp4'
+frm_sampling_strategy: 'headtail'
+height: null
+width: null
+start_time: null
+end_time: null
+fps: -1
+
+### for visual tokenization ###
+num_frm_visual_tokenization: 8
+blip_model_visual_tokenization: 'ckpt/finetuned/model_base_retrieval_coco.pth'
+clip_model_visual_tokenization: 'openai/clip-vit-large-patch14'
+
+ontology: 'vg'
+topk_visualize: 5
+prompt_version_visual_tokenization: 'v1'
+
+save_frame_dir: 'visual_token_generation/frames/msrvtt'
+save_frames: False
+early_stop_step: -1
+
+### for CapFilt ###
+caption: True
+filter: True
+filter_generated_only: True
+keep_original_caption: False
+caption_model_ckpt: 'ckpt/finetuned/model_base_caption_capfilt_large.pth' # finetuned
+filterer_model_ckpt: 'ckpt/finetuned/model_base_retrieval_coco.pth'
+filter_mode: max_filter
+generation_mode: "beam"
+threshold: 0.4
+num_frm_CapFilt: 4
+do_sentence_tokenization: True
+
+### blip model config ###
+vit: 'base'
+vit_grad_ckpt: True
+vit_ckpt_layer: 4
+
+image_size: 384
+queue_size: 57600
+alpha: 0.4
+k_test: 128
+negative_all_rank: True
