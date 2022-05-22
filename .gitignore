@@ -40,3 +40,5 @@ Thumbs.db
 archive_
 output_test
 run_docker_vidil_local.sh
+output_example/*
+shared_datasets/*

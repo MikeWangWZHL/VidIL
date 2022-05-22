@@ -5,8 +5,7 @@
 ---
 
 ## Download Datasets & Checkpoints
-- download dataset annotations:
-    Download zip from [here](https://uofi.box.com/s/wwh4phgetakycvzeyxoih5qupevzj9xe). Then unzip the downloaded datasets under `shared_datasets/`. The resulting shared_dataset folder structure is expected to be:
+- Download dataset annotations zip from [here](https://uofi.box.com/s/wwh4phgetakycvzeyxoih5qupevzj9xe). Then unzip the downloaded datasets under `shared_datasets/`. The resulting shared_dataset folder structure is expected to be:
     ```
     shared_datasets
     ├── README.md
@@ -16,14 +15,12 @@
     ```
     Then, please refer to [Dataset Instruction](shared_datasets/README.md) for downloading and processing raw videos.
 
-
-
-- download BLIP checkpoints:
+- Download BLIP checkpoints:
     ```
     bash download_blip_checkpoints.sh
     ```
 
-- download Input & Output Examples zip from [here](https://uofi.box.com/s/vsnh9l5qn5p08spoftgs8anabmbll8ky). Unzip the folders under `output_example/`, the resulting `output_example/` folder structure is expected to be:
+- Download Input & Output Examples zip from [here](https://uofi.box.com/s/vsnh9l5qn5p08spoftgs8anabmbll8ky). Unzip the folders under `output_example/`, the resulting `output_example/` folder structure is expected to be:
     ```
     output_example
     ├── msrvtt
