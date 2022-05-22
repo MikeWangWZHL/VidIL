@@ -26,7 +26,7 @@
     ├── msrvtt
     ├── msvd_test
     ├── vlep_test
-    ├── README.md
+    └── README.md
     ```
 
 ## Set Up Environment
