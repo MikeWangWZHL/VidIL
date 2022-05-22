@@ -37,5 +37,6 @@ ehthumbs.db
 Thumbs.db
 
 # project-specific
+archive_
 output_test
 run_docker_vidil_local.sh

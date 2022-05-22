@@ -5,12 +5,31 @@
 ---
 
 ## Download Datasets & Checkpoints
-- download datasets:
-Put downloaded datasets at `shared_datasets/`. Please refer to [Dataset Instruction](shared_datasets/README.md) for more details.
+- download dataset annotations:
+    Download zip from [here](https://uofi.box.com/s/wwh4phgetakycvzeyxoih5qupevzj9xe). Then unzip the downloaded datasets under `shared_datasets/`. The resulting shared_dataset folder structure is expected to be:
+    ```
+    shared_datasets
+    ├── README.md
+    ├── MSRVTT_caption
+    ├── MSRVTT_qa
+    ...
+    ```
+    Then, please refer to [Dataset Instruction](shared_datasets/README.md) for downloading and processing raw videos.
+
+
 
 - download BLIP checkpoints:
     ```
     bash download_blip_checkpoints.sh
+    ```
+
+- download Input & Output Examples zip from [here](https://uofi.box.com/s/vsnh9l5qn5p08spoftgs8anabmbll8ky). Unzip the folders under `output_example/`, the resulting `output_example/` folder structure is expected to be:
+    ```
+    output_example
+    ├── msrvtt
+    ├── msvd_test
+    ├── vlep_test
+    ├── README.md
     ```
 
 ## Set Up Environment
@@ -65,12 +84,15 @@ An example of the frame caption and visual token dir can be found at: `output_ex
 ### Video Captioning
 For `<dataset> in ["msrvtt","youcook2","vatex"]`:
 - (1) Run the [Standalone Frame Captioning and Visaul Tokenization pipieline](#Standalone-Pipeline-for-Frame-Captioning-and-Visaul-Tokenization) for the chosen `<dataset>`
+
 - (2) Run pipeline for generating video captioning prompts for `<dataset>` `<split> in ["train","val","test"]`
     - w/o ASR: 
+
     ```
     bash pipeline/scripts/generate_gpt3_query_pipeline_caption_with_in_context_selection.sh <dataset> <split> <output_root> 10 42 5 caption
     ```
     - w/ ASR:
+
     ```
     bash pipeline/scripts/generate_gpt3_query_pipeline_caption_with_in_context_selection_with_asr.sh <dataset> <split> <output_root> 10 42 5 caption_asr
     ```
@@ -81,6 +103,7 @@ For `<dataset> in ["msrvtt","msvd"]`:
 - (1) Run the [Standalone Frame Captioning and Visaul Tokenization pipieline](#Standalone-Pipeline-for-Frame-Captioning-and-Visaul-Tokenization) for the chosen `<dataset>`
 
 - (2) Run pipeline for generating video question answering prompts for `<dataset>` `<split> in ["train","val","test"]`
+
     ```
     bash pipeline/scripts/generate_gpt3_query_pipeline_qa_with_in_context_selection.sh <dataset> <split> <output_root> 5 42 5 question
     ```
@@ -91,6 +114,7 @@ For `<dataset> in ["msrvtt","msvd"]`:
 - (1) Run the [Standalone Frame Captioning and Visaul Tokenization pipieline](#Standalone-Pipeline-for-Frame-Captioning-and-Visaul-Tokenization) for the chosen `vlep`
 
 - (2) Run pipeline for generating vlep prompts
+
     ```
         bash pipeline/scripts/generate_gpt3_query_pipeline_vlep_with_random_context_asr_multichoice.sh <dataset> <split> <output_root> 10 42
     ```
@@ -119,21 +143,25 @@ For `<dataset> in ["msrvtt","vatex"]`, set the value of the field named `train_a
 ## Evaluation
 Scripts for evaluating generation results from GPT-3:
 - Video Captioning: please refer to the example written in the script for more details about the required inputs
+
     ```
     bash scripts/evaluation/eval_caption_from_gpt3_response.sh
     ```
 
 - Question Answering: please refer to the example written in the script for more details about the required inputs
+
     ```
     bash scripts/evaluation/eval_qa_from_gpt3_response.sh
     ```
 
 - VLEP:
     - (1) get the processed gpt3 response; an example of the: `<gpt3_response_dir>`, `<input_prompts_dir>` and `<processed_response_dir>` can be found at: `output_example/vlep_test/gpt3_response`, `output_example/vlep_test/input_prompts`,  `output_example/vlep_test/gpt3_response_processed`
+
         ```
             python utils_gpt3/process_gpt3_response.py --gpt3_response_dir <gpt3_response_dir> --input_prompts_dir <input_prompts_dir> --output_dir <processed_response_dir>
         ```
     - (2) run the following script to generate the output in the official format for [CodaLab submission](https://github.com/jayleicn/VideoLanguageFuturePred/blob/main/standalone_eval/README.md#codalab-submission); an example of the output jsonl can be found at `output_example/vlep_test/evaluation/temp_0.0_vlep_test_clip_shot_10_seed_42_multichoice_eval.jsonl`
+
         ```
             python eval_vlep.py --gpt3_processed_response <processed_response_json> --output_path <output_jsonl_path>
         ```
