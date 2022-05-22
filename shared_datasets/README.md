@@ -1,3 +1,13 @@
+# Download Dataset Annotations
+Download dataset annotations zip from [here](https://uofi.box.com/s/wwh4phgetakycvzeyxoih5qupevzj9xe). Then unzip the downloaded datasets under `shared_datasets/`. The resulting shared_dataset folder structure is expected to be:
+```
+shared_datasets
+├── README.md
+├── MSRVTT_caption
+├── MSRVTT_qa
+...
+```
+
 # Download & Preprocess Raw Videos
 Instruction for downloading the videos and preprocessing the datasets. The annotation files are already included in the repo. The preprocessing scripts require installing the following additional package:
 ```
