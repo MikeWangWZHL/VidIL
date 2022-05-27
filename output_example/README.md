@@ -1,5 +1,5 @@
 # Download
-Download Input & Output Examples zip from [here](https://uofi.box.com/s/vsnh9l5qn5p08spoftgs8anabmbll8ky). Unzip the folders under `output_example/`, the resulting `output_example/` folder structure is expected to be:
+Download Input & Output Examples zip from [box](https://uofi.box.com/s/vsnh9l5qn5p08spoftgs8anabmbll8ky) or [google dirve](https://drive.google.com/file/d/15drX9SPuyqQW-MpwaBaPAxFMn18OULnD/view?usp=sharing). Unzip the folders under `output_example/`, the resulting `output_example/` folder structure is expected to be:
 ```
 output_example
 ├── msrvtt

@@ -1,5 +1,5 @@
 # Download Dataset Annotations
-Download dataset annotations zip from [here](https://uofi.box.com/s/wwh4phgetakycvzeyxoih5qupevzj9xe). Then unzip the downloaded datasets under `shared_datasets/`. The resulting shared_dataset folder structure is expected to be:
+Download dataset annotations zip from [box](https://uofi.box.com/s/wwh4phgetakycvzeyxoih5qupevzj9xe) or [google drive](https://drive.google.com/file/d/1w8kOkqpJzdudG4dKIce6b4IfhLty6o_a/view?usp=sharing). Then unzip the downloaded datasets under `shared_datasets/`. The resulting shared_dataset folder structure is expected to be:
 ```
 shared_datasets
 ├── README.md
