@@ -166,6 +166,12 @@ Scripts for evaluating generation results from GPT-3:
 
 # Citation
 ```
+@article{wang2022language,
+  title={Language Models with Image Descriptors are Strong Few-Shot Video-Language Learners},
+  author={Wang, Zhenhailong and Li, Manling and Xu, Ruochen and Zhou, Luowei and Lei, Jie and Lin, Xudong and Wang, Shuohang and Yang, Ziyi and Zhu, Chenguang and Hoiem, Derek and others},
+  journal={arXiv preprint arXiv:2205.10747},
+  year={2022}
+}
 ```
 
 # Acknowledgement
