@@ -48,7 +48,10 @@ within the docker image, set up the following environment variables to config GP
 ---
 
 ## Generate Video Representation & GPT-3 Prompt 
-The following scripts runs the pipeline which, (1) generates frame captions; (2) generates visual tokens (3) generates few-shot prompt readily for GPT-3. The output folder have the following structure:
+-  [Update 6/15] Quick Start with generated video representation: Frame captions and visual tokens for five datasets can be downloaded [here](https://drive.google.com/file/d/1sEFtKXT5GogTPOWw25ETk4LASqDtPXms/view?usp=sharing) if you don't want to go through the entire pipeline. You can copy the json files into the following data structure mentioned below.
+
+
+The following scripts runs the entire pipeline which, (1) generates frame captions; (2) generates visual tokens (3) generates few-shot prompt readily for GPT-3. The output folder have the following structure:
 ```
     {dataset_split}
     ├── frame_caption
