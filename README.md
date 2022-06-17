@@ -29,7 +29,7 @@
     └── README.md
     ```
 
-- [Update 7/17] GPT-3 Results for Video Captioning, Video Question Answering and VLEP can be downloaded [here](https://drive.google.com/file/d/1TELXLkN5Z1MhKPBNcFfk1aihOhWhs8jd/view?usp=sharing).
+- [Update 6/17] GPT-3 Results for Video Captioning, Video Question Answering and VLEP can be downloaded [here](https://drive.google.com/file/d/1TELXLkN5Z1MhKPBNcFfk1aihOhWhs8jd/view?usp=sharing).
 
 ## Set Up Environment
 
