@@ -1,4 +1,4 @@
-# VidIL: [Language Models with Image Descriptors are Strong Few-Shot Video-Language Learners](https://arxiv.org/abs/2205.10747)
+# VidIL: [Language Models with Image Descriptors are Strong Few-Shot Video-Language Learners](https://arxiv.org/abs/2205.10747) (NeurIPS 2022)
 
 <img src="vidIL.gif" width="1200">
 
